@@ -1,8 +1,8 @@
 
 public class Moto extends Vehiculo {
 
-    public Moto(String marca, String modelo, double velocidad) {
-        super(marca, modelo, velocidad, velocidad);
+    public Moto(String marca, String modelo, double velocidad, double combustible) {
+        super(marca, modelo, velocidad, combustible);
     }
 
     @Override

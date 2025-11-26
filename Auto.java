@@ -1,8 +1,8 @@
 
 public class Auto extends Vehiculo {
 
-    public Auto(String marca, String modelo, double velocidad) {
-        super(marca, modelo, velocidad, velocidad);
+    public Auto(String marca, String modelo, double velocidad, double combustible) {
+        super(marca, modelo, velocidad, combustible);
     }
 
     @Override
