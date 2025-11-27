@@ -1,4 +1,6 @@
+
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Main {
 
@@ -8,29 +10,34 @@ public class Main {
         System.out.println("Ha cuantos carros le va a verificar el rendimiento? --> Ingrese la cantidad: ");
 
         int numeroVehiculos = sc.nextInt();
+        sc.nextLine();
 
-        Vehiculo[] coches = new Vehiculo[numeroVehiculos];
+        Vehiculo[] misCoches = new Vehiculo[numeroVehiculos];
 
-        Vehiculo rojo = new Auto();
-        Vehiculo azul = new Auto();
-        Vehiculo verde = new Moto();
-        Vehiculo amarillo = new Moto();
+        for (int i = 0; i < numeroVehiculos; i++) {
+            System.out.println("\nVehículo " + (i + 1));
+            System.out.println("Escriba #1 si es Auto o #2 si es Moto");
+            int tipo = sc.nextInt();
+            sc.nextLine();
 
-        coches[0] = rojo;
-        coches[1] = azul;
-        coches[2] = verde;
-        coches[3] = amarillo;
+            System.out.println("Marca: ");
+            String marca = sc.nextLine();
+            System.out.println("Modelo");
+            String modelo = sc.nextLine();
+            System.out.println("Velocidad maxima");
+            double velocidad = sc.nextInt();
+            System.out.println("Combustible");
+            double combustible = sc.nextInt();
 
-        double consumoRojo = coches[0].calcularConsumo();
-        double consumoAzul = coches[1].calcularConsumo();
-        double consumoVerde = coches[2].calcularConsumo();
-        double consumoAmarillo = coches[3].calcularConsumo();
-
-        System.out.println("El consumo del coche rojo es: " + consumoRojo);
-        System.out.println("El consumo del coche rojo es: " + consumoAzul);
-        System.out.println("El consumo del coche rojo es: " + consumoVerde);
-        System.out.println("El consumo del coche rojo es: " + consumoAmarillo);
+            if (tipo == 1) {
+                misCoches[i] = new Auto(marca, modelo, velocidad, combustible);
+            } else {
+                misCoches[i] = new Moto(marca, modelo, velocidad, combustible);
+            }
+        }
+        for (int i = 0; i < misCoches.length; i++) {
+            misCoches[i].mostrarDatos();
+        }
 
     }
-
 }

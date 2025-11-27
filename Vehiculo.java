@@ -15,6 +15,12 @@ public class Vehiculo {
 
     }
 
+    public void mostrarDatos() {
+
+        System.out.println("La marca es: " + marca + " el modelo es: " + modelo + " su velocidad es de: "
+                + velocidad + " y su capacidad de combustible es: " + combustible);
+    }
+
     public double calcularConsumo(double distancia) {
         double totalConsumo = distancia / combustible;
         //System.out.println("El total del consumo es: " + totalConsumo); <- Esto solo es para metodos que no retornen valores.
